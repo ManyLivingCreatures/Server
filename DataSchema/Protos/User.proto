@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package DataSchema.Protos.User;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
+service UserService {
+	rpc CreateUser (CreateUserRequest) returns (CreateUserResponse);
+	rpc UpdateUser (UpdateUserRequest) returns (google.protobuf.Empty);
+	rpc GetUser (GetUserRequest) returns (GetUserResponse);
+	rpc DeleteUser (DeleteUserRequest) returns (google.protobuf.Empty);
+}
+
+message CreateUserRequest {
+	string user_name = 1;
+	string password = 2;
+	string nick_name = 3;
+}
+
+message CreateUserResponse {
+	int64 user_id = 1;
+	google.protobuf.Timestamp created_at = 3;
+}
+
+message GetUserRequest {
+	oneof user_identifier {
+		int64 user_id = 1;
+		string user_name = 2;
+	}
+}
+
+message GetUserResponse {
+	int64 user_id = 1;
+	string user_name = 2;
+	string nick_name = 3;
+	google.protobuf.Timestamp created_at = 7;
+}
+
+message UpdateUserRequest {
+	optional int64 user_id = 1;
+	//optional string user_name = 2;
+	optional string nick_name = 3;
+}
+
+message DeleteUserRequest {
+	oneof user_identifier {
+		int64 user_id = 1;
+		string user_name = 2;
+	}
+}

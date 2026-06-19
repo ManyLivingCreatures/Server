@@ -1,0 +1,12 @@
+<Solution>
+  <Project Path="DatabaseSchema/DatabaseSchema.csproj" />
+  <Project Path="DataSchema/DataSchema.csproj" />
+  <Project Path="DataServer/DataServer.csproj" />
+  <Project Path="EntryServer/EntryServer.csproj" />
+  <Project Path="Grains/Grains.csproj" />
+  <Project Path="Interfaces/Interfaces.csproj" />
+  <Project Path="ManagerServer/ManagerServer.csproj" />
+  <Project Path="GameSchema/GameSchema.csproj" />
+  <Project Path="ServerCommon/ServerCommon.csproj" />
+  <Project Path="SiloServer/SiloServer.csproj" />
+</Solution>
